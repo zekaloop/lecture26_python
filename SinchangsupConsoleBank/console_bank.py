@@ -74,7 +74,7 @@ class ConsoleBank:
         
         if self.msv.login(user_id, password):
             print("로그인 성공!")
-            # 관리자(admin)인지 일반 손님인지에 따라 보여주는 메뉴판이 다릅니다.
+            
             if self.msv.current_user == MemberService.ADMIN_ID:
                 self.run_admin_menu()
             else:
