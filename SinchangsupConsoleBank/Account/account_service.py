@@ -58,13 +58,13 @@ class AccountService:
 
 if __name__ == '__main__':
     aservice = AccountService(AccountDAO())
-    aservice.create_account(Account(0, 'hyejeong', 100000, '1234'))
-    aservice.create_account(Account(0, 'hyejeong', 200000, '1234'))
-    aservice.create_account(Account(0, 'curi', 300000, '1234'))
+    aservice.create_account(Account(0, 'minjae', 100000, '1234'))
+    aservice.create_account(Account(0, 'minjae', 200000, '1234'))
+    aservice.create_account(Account(0, 'changsup', 300000, '1234'))
     for account in aservice.get_all_accounts():
         print(account)
     print()
-    for account in aservice.get_members_accounts('curi'):
+    for account in aservice.get_members_accounts('changsup'):
         print(account)
 
     print()
@@ -75,7 +75,7 @@ if __name__ == '__main__':
         print('없는 계좌입니다.')
 
     try:
-        aservice.withdraw('hyejeong', '111112', 10000, '1234')
+        aservice.withdraw('minjae', '111112', 10000, '1234')
     except Exception as e:
         print(type(e))
     else:
@@ -83,7 +83,7 @@ if __name__ == '__main__':
             print(account)
 
     try:
-        aservice.delete_account('curi', '111115', '1111')
+        aservice.delete_account('changsup', '111115', '1111')
     except Exception as e:
         print(type(e))
     else:
