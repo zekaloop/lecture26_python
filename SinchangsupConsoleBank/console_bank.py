@@ -179,7 +179,6 @@ class ConsoleBank:
             elif menu == 1: self.menu_view_myinfo()
             elif menu == 2: self.menu_update_password()
             elif menu == 3: 
-                # 회원 탈퇴를 하면 은행 메뉴에서도 나가야 하니 break로 끝내줍니다.
                 if self.menu_delete_membership():
                     break
 
