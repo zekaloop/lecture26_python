@@ -47,17 +47,17 @@ if __name__ == '__main__':
     dao = AccountDAO()
     ac_list = dao.select_all_accounts()
     print(ac_list)
-    dao.insert_account(Account('111111', 'hyejeong', 10000, '1234'))
-    dao.insert_account(Account('111112', 'curi', 20000, '1234'))
-    dao.insert_account(Account('111113', 'curi', 200000, '1234'))
+    dao.insert_account(Account('111111', 'minjae', 10000, '1234'))
+    dao.insert_account(Account('111112', 'changsup', 20000, '1234'))
+    dao.insert_account(Account('111113', 'changsup', 200000, '1234'))
     for account in dao.select_all_accounts():
         print(account)
     print(dao.select_account_by_account_no('111114'))
-    for account in dao.select_accounts_by_member_id('hyejeong'):
+    for account in dao.select_accounts_by_member_id('minjae'):
         print(account)
     print()
     print(dao.select_account_by_account_no('111112'))
-    dao.update_account('111112', Account('111112', 'curi', 300000, '1234'))
+    dao.update_account('111112', Account('111112', 'changsup', 300000, '1234'))
     print(dao.select_account_by_account_no('111112'))
     print()
     dao.delete_account('111113')
