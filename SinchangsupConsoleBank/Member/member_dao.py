@@ -42,21 +42,21 @@ if __name__ == '__main__':
     dao = MemberDAO()
     print(dao.is_exist('hyejeong'))
 
-    member = Member('hyejeong', '1234', '이혜정')
+    member = Member('minjae', '1234', '김민재')
     dao.insert_member(member)
-    member = Member('curi', '1234', '1234')
+    member = Member('changsup', '1234', '1234')
     dao.insert_member(member)
-    print(dao.get_member_info('hyejeong'))
-    print(dao.get_member_info('curi'))
+    print(dao.get_member_info('minjae'))
+    print(dao.get_member_info('changsup'))
 
     members = dao.get_all_members()
     for member in members:
         print(member)
 
-    member = dao.get_member_info('hyejeong')
+    member = dao.get_member_info('minjae')
     if member:
         member.set_password('1111')
-        dao.update_member_info('hyejeong', member)
+        dao.update_member_info('minjae', member)
     
     members = dao.get_all_members()
     for member in members:
