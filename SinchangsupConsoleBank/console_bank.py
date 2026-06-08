@@ -6,7 +6,6 @@ from Account.account_dao import AccountDAO
 from Account.account_service import AccountService
 
 class ConsoleBank:
-    # 메뉴판 내용 채우기
     start_menu = ['종료', '로그인', '회원가입']
     banking_menu = ['로그아웃', '내 계좌 목록', '입금', '출금', '계좌 생성', '계좌 삭제', '내 정보']
     member_myinfo_menu = ['뒤로가기', '내 정보 보기', '비밀번호 변경', '회원 탈퇴']
@@ -61,7 +60,6 @@ class ConsoleBank:
         password = input("비밀번호: ")
         name = input("이름: ")
         
-        # 새 손님 명찰(Member)을 만들어서 매니저(msv)에게 등록해달라고 합니다.
         new_member = Member(user_id, password, name)
         if self.msv.join(new_member):
             print("회원가입이 완료되었습니다!")
@@ -73,7 +71,7 @@ class ConsoleBank:
         user_id = input("ID: ")
         password = input("비밀번호: ")
         
-        # 매니저에게 신분증 검사를 맡깁니다.
+        
         if self.msv.login(user_id, password):
             print("로그인 성공!")
             # 관리자(admin)인지 일반 손님인지에 따라 보여주는 메뉴판이 다릅니다.
@@ -131,7 +129,7 @@ class ConsoleBank:
         password = input("계좌 비밀번호: ")
         amount = int(input("출금할 금액: "))
         
-        # 매니저(AccountService)가 깐깐하게 검사해서 에러를 던지면, 직원이 잘 받아줍니다.
+        
         try:
             self.asv.withdraw(self.msv.current_user, acc_no, amount, password)
             print("출금이 완료되었습니다.")
@@ -147,7 +145,7 @@ class ConsoleBank:
         password = input("새 통장에 쓸 비밀번호: ")
         first_deposit = int(input("초기 입금액: "))
         
-        # 번호는 매니저가 자동으로 만드니까 0으로 넣고 넘깁니다.
+        
         my_id = self.msv.current_user
         new_account = Account(0, my_id, first_deposit, password)
         
