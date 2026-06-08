@@ -17,11 +17,15 @@ class Account:
     def set_balance(self, balance):
         self.__balance = balance
 
+   
+    def set_account_no(self, account_no):
+        self.__account_no = account_no
+
     def __str__(self):
         return f'계좌번호 = {self.__account_no}, 계좌주 = {self.__owner}, 잔액 = {self.__balance}, 비밀번호 = {self.__password}'
     
 if __name__ == '__main__':
-    ac = Account('111111', '이혜정', 10000, '1234')
+    ac = Account('111111', '김민재', 10000, '1234')
     ac.set_balance(20000)
     print(ac)
     print(ac.get_account_no())
