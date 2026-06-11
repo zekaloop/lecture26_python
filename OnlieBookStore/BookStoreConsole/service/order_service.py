@@ -14,6 +14,7 @@ class OrderService:
 
         new_order = Order(self.__order_dao.generate_order_id(), member_id, items_info, total_price, address)
         self.__order_dao.insert_order(new_order)
+        self.__cart_dao.clear_cart(member_id)
         print(f"\n[성공] 결제 완료! (주문번호: {new_order.get_order_id()})")
 
     def show_my_orders(self, member_id):
