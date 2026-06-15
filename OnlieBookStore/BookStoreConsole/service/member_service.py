@@ -34,5 +34,4 @@ class MemberService:
         for m_id, m in members.items():
             role = "관리자" if m.get_is_admin() else "일반회원"
             
-            
             print(f"[{m_id}] 이름: {m.get_name()} | 등급: {role}")
