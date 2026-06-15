@@ -167,14 +167,6 @@ class ConsoleApp:
     def logout(self):
         self.logged_in_user = None
         self.is_admin_mode = False
-
-if __name__ == "__main__":
-    app = ConsoleApp()
-    app.run()
-
-    def logout(self):
-        self.logged_in_user = None
-        self.is_admin_mode = False
         print("로그아웃 되었습니다.")
 
 if __name__ == "__main__":
