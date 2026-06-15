@@ -32,8 +32,7 @@ class MemberService:
         members = self.__member_dao.select_all_members()
         print("\n--- 👥 회원 목록 ---")
         for m_id, m in members.items():
-            # 관리자 여부(True/False)를 일반회원/관리자 문자열로 변환합니다.
             role = "관리자" if m.get_is_admin() else "일반회원"
             
-            # 이름과 등급을 명확히 나누어 출력합니다.
+            
             print(f"[{m_id}] 이름: {m.get_name()} | 등급: {role}")
